@@ -62,7 +62,7 @@ end
 
 
 def volume_of_cube(length_of_side)
-return volume = length_of_side * length_of_side * length_of_side
+return volume = length_of_side**3
 end
 
 
