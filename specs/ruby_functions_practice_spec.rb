@@ -2,6 +2,12 @@ require( 'minitest/autorun' )
 require( 'minitest/rg' )
 require_relative( '../ruby_functions_practice' )
 
+# def test_return_10() 'function name'
+#     expected = 10 'first value'
+#     actual = return_10() 'second value'
+#     assert_equal( expected, actual ) expected,actual
+# end
+
 class FunctionsTest < MiniTest::Test
 
   def test_return_10()
@@ -13,12 +19,12 @@ class FunctionsTest < MiniTest::Test
     add_result = add( 1, 2 )
     assert_equal( 3, add_result )
   end
-
+  #
   def test_subtract()
     subtract_result = subtract( 10, 5 )
     assert_equal( 5, subtract_result )
   end
-
+  #
   def test_multiply()
     multiply_result = multiply( 4, 2 )
     assert_equal( 8, multiply_result )
@@ -34,14 +40,14 @@ class FunctionsTest < MiniTest::Test
     length_of_string = length_of_string( test_string )
     assert_equal( 21, length_of_string )
   end
-
+  #
   def test_join_string()
     string_1 = "Mary had a little lamb, "
     string_2 = "its fleece was white as snow"
     joined_string = join_string( string_1, string_2 )
     assert_equal( "Mary had a little lamb, its fleece was white as snow", joined_string )
   end
-
+  #
   def test_add_string_as_number()
     add_result = add_string_as_number( "1", "2" )
     assert_equal( 3, add_result )
@@ -80,20 +86,24 @@ class FunctionsTest < MiniTest::Test
   # #Further
   #
   #Given the length of a side of a cube calculate the volume
-  def test_volume_of_cube()
-    test_cube_volume = volume_of_cube(5)
-    assert_equal(125, test_cube_volume)
+  def test_volume_of_cube() # x * x * x
+    length_of_side = volume_of_cube(4)
+    assert_equal(64, length_of_side)
   end
   #
   # #Given the radius of a sphere calculate the volume
-  # def test_volume_of_sphere()
-  #   #add test code here
-  # end
+  #v = 4/3 * pi * r cubed
+  #Given the radius of a sphere calculate the volume
+ def test_volume_of_sphere()
+   result = volume_of_sphere(5)
+   assert_equal(523.6, result)
+ end
   #
   # #Given a value in farenheit, convert this into celsius.
-  # def test_fahrenheit_to_celsius()
-  #   #add test code here
-  # end
+   def test_fahrenheit_to_celsius()
+     result = fahrenheit_to_celsius(100)
+     assert_equal(37, result)
+   end
 
 
 end
